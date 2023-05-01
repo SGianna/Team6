@@ -21,6 +21,9 @@
 /**3.
 이름이 ALLEN인 사람의 모든 정보를 출력하라.
 */
+select *
+from emp
+where ename = 'ALLEN';
 
 
 
@@ -46,6 +49,9 @@
 /**7.
 급여가 800이상인 사람의 이름, 급여, 부서번호를 출력하라
 */
+select ename, sal, deptno 
+from emp
+where sal >=800;
 
 
 
@@ -73,6 +79,9 @@
 /**11.
 입사번호가 7698보다 작거나 같은 사람들의 입사번호와 이름을 출력하라.
 */
+select ename, empno 
+from emp
+where empno <= 7698;
 
 
 
@@ -99,6 +108,9 @@
 /**15.
 직업이 MANAGER와 SALESMAN인 사람의 모든 정보를 출력하라
 */
+select *
+from emp
+where job in ('MANAGER','SALESMAN');
 
 
 
@@ -126,6 +138,9 @@
 /**19.
 이름이 S로 시작하고 마지막 글자가 T인 사람이 정보를 출력하라. 단 이름은 전체 5자리이다.
 */
+select *
+from emp
+where ename like 'S___T';
 
 
 
@@ -145,9 +160,11 @@
 
 
 /**22.
-부서가 30번 부서이고 급여가 1500이상인 사람의 이름, 부서, 월급(sal)을 출력하라.
+이름의 첫글자가 K로 시작하거나 부서번호가 30인 사람의 사원번호, 이름, 부서번호를 출력하라.
 */
-
+select empno, ename, deptno
+from emp
+where ename like 'K%' or deptno = 30;
 
 
 
@@ -172,18 +189,31 @@
 
 /**25.
 급여가 많은 순으로 정렬하라.
+-- 급여가 많은 순으로 모든 사원의 모든 정보를 출력하라.
 */
+select * 
+from emp
+order by sal desc;
 
 
 
 /**26.
 부서번호로 오름차순 한 후 급여가 많은 사람 순으로 출력하라.
+-- 어떤 정보를 출력할지 명확히 할것 -> 모든 정보를 출력하라.
+-- 부서번호로 오름차순을 한 후 부서번호가 같을 때 급여가 많은 순으로 
 */
-
+select * 
+from emp
+order by deptno asc, sal desc;
+​
 
 
 /**27.
 부서번호로 내림차순 하고 급여순으로 내림차순하라.
+-- 부서번호로 내림차순 한 후 부서번호가 같을 때 급여가 많은 순으로 모든 사원들의 정보를 출력하라.
 */
-
+select *
+from emp
+order by deptno desc, sal desc;
+Collapse
 
