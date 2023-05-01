@@ -10,7 +10,9 @@
 /**1.
 부서번호가 10번인 부서의 사람 중 사원번호, 이름, 월급을 출력하라
 */   
-
+select empno, ename, sal 
+from emp
+where dept = 10;
 
 
 /**2.
