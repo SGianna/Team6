@@ -22,7 +22,7 @@ public class Controller {
 	
 	public static void showAllCustomer() {
 		for(Customer v : Model.getAllCustomer()) {
-			EndView.showPrint(v.getName() + "님의 잔액은" + v.getMoney() + "입니다.");
+			EndView.showPrint(v.getName() + "님의 잔액은" + v.getMoney() + "이고 " + v.bene());
 		}
 	}
 }

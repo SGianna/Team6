@@ -16,10 +16,14 @@ public class Model {
 			return false;
 		}else {
 			if(money < 500) {
-				Customer c = new Customer(name, money);
+				//Customer c = new Customer(name, money);
+				//SilverMember c = new SilverMember(name, money);
+				Customer c = new SilverMember(name, money);
 				customer.add(c);
 			}else {
-				Customer c = new Customer(name, money);
+				//Customer c = new Customer(name, money);
+				//GoldMember c = new GoldMember(name, money);
+				Customer c = new GoldMember(name, money);
 				customer.add(c);
 			}
 			
