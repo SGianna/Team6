@@ -9,7 +9,7 @@ import model.MenuDAO;
 import view.OutputView;
 
 public class Controller {
-	
+
 	//회원가입시 회원 정보 저장하기
 	public static boolean addCustomer(CustomerDTO signin) {
 		boolean result = false;
