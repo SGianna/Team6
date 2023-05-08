@@ -54,6 +54,45 @@ create table menu(
 	
 create table sale(
 	order_id int,
+	order_date timestamp,
+	total int,
+	cust_id varchar(5),
+	primary key (order_id),
+	foreign key (cust_id) references customer(cust_id)
+);
+
+desc sale;
+
+
+
+-- select * from information_schema.TABLE_CONSTRAINTS tc
+-- where table_name='sale';
+-- alter talbe
+
+desc customer;
+
+select * from information_schema.TABLE_CONSTRAINTS tc
+where table_name='customer';
+
+create table grade(
+	grade_id int,
+	grade_name varchar(30),
+	standard int,
+	primary key (grade_id)		
+	);
+
+
+	
+create table menu(
+	menu_id int,
+	menu_name varchar(50),
+	price int,
+	categories int,
+	calorie int
+	);
+	
+create table sale(
+	order_id int,
 	order_table timestamp,
 	total int,
 	cust_id varchar(5),
