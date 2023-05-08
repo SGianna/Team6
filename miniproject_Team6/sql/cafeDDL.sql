@@ -1,17 +1,19 @@
 
+
 use fisa;
 
 
+-- 주문 테이블
+drop table if exists sale;
+
 -- 고객 테이블
 drop table if exists customer;
--- 등급 테이블
-drop table if exists grade;
 
 -- 메뉴 테이블
 drop table if exists menu;
 
--- 주문 테이블
-drop table if exists sale;
+-- 등급 테이블
+drop table if exists grade;
 
 
 
@@ -60,5 +62,7 @@ create table sale(
 );
 
 desc sale;
+
+
 
 
