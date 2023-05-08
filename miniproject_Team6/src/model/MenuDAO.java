@@ -36,8 +36,26 @@ public class MenuDAO {
 		return list;
 	}
 	
-	//public static int getPrice() throws SQLException{
+	public static int getPrice(String menuName) throws SQLException{
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;	
 		
-	//}
+		int price = 0; 
+		try {
+			con = DBUtil.getConnection();
+			pstmt = con.prepareStatement("select price from menu where menu_name = ?");
+			pstmt.setString(1,menuName);
+			
+			rset = pstmt.executeQuery();
+			
+			if(rset.next()) {
+				price = rset.getInt(1);
+			}
+		} finally {
+			DBUtil.close(con, pstmt, rset);
+		}
+		return price;		
+	}
 	
 }

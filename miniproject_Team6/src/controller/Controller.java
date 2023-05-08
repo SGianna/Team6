@@ -71,19 +71,29 @@ public class Controller {
 		inputView.thirdMsg();
 	}
 
-//	public static void getAllMenu() {
-//		try {
-//
-////			 OutputView.getMenuListView(MenuDAO.getAllMenu());
-//
-//		} catch (SQLException s) {
-//			s.printStackTrace();
-//			OutputView.printException("메뉴판 생성에 실패하였습니다.");
-//		}
-//	}
-//
-//	public static int getPrice(String menuName) {
-//		OutputView.OrderView(MenuDAO.getPrice(menuName));
-//	}
+	public static boolean getAllMenu() {
+		try {
+
+			 OutputView.getMenuListView(MenuDAO.getAllMenu());
+
+		} catch (SQLException s) {
+			s.printStackTrace();
+			OutputView.printException("메뉴판 생성에 실패하였습니다.");
+			return false;
+		}
+		return true;
+	}
+
+	public static boolean getPrice(String menuName) {
+	
+		try {
+			OutputView.OrderView(MenuDAO.getPrice(menuName));
+		} catch (SQLException e) {
+			e.printStackTrace();
+			OutputView.printException(menuName + "의 가격 정보를 불러오지 못했습니다.");
+			return false;
+		}
+		return true;
+	}
 
 }

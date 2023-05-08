@@ -19,7 +19,7 @@ public class OutputView {
 			System.out.println(" < 메뉴판 >");
 			System.out.println("----------------------------------");
 			for(MenuDTO m : menuList) {
-				System.out.println(count++ +"." + 
+				System.out.println( " "+
 									m.getMenu_name() + " " 
 									+m.getPrice() + "원 "
 									+m.getCalorie() + "cal");
@@ -30,5 +30,8 @@ public class OutputView {
 			System.out.println("검색 정보 0");
 		}
 	}
-
+	
+	public static void OrderView(int menuPrice) {
+		System.out.println("주문해주셔서 감사합니다. 주문 금액은 "+ menuPrice +"원 입니다.");
+	}
 }
