@@ -1,7 +1,11 @@
 package view;
 
 public class OutputView {
+    private static final String EXCEPTION_MESSAGE = "[ERROR] ";
 
+    public static void printException(String message) {
+        System.out.println(EXCEPTION_MESSAGE + message);
+    }
 //	public static void getMenuListView(ArrayList<MenuDTO> menuList) {
 //		int listSize = menuList.size();
 //		
@@ -16,8 +20,4 @@ public class OutputView {
 //		}
 //	}
 
-	//예외 상황 출력
-	public static void showError(String message){
-		System.out.println(message);		
-	}
 }

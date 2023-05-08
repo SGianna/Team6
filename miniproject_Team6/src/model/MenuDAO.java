@@ -31,5 +31,9 @@ public class MenuDAO {
 //		}
 //		return list;
 //	}
+//	
+//	public static int getPrice() throws SQLException{
+//		
+//	}
 	
 }
