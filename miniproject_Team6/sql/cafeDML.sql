@@ -17,12 +17,12 @@ select * from customer;
 insert into menu (menu_id,menu_name,price,categories,calorie) values (1000,'에스프레소',5500,1000,5);
 insert into menu (menu_id,menu_name,price,categories,calorie) values (1001,'아메리카노',4500,1000,10);
 insert into menu (menu_id,menu_name,price,categories,calorie) values (1002,'카페라떼',5000,1000,110);
-insert into menu (menu_id,menu_name,price,categories,calorie) values (1003,'돌체 콜드 브루',6000,1000,265);
+insert into menu (menu_id,menu_name,price,categories,calorie) values (1003,'돌체콜드브루',6000,1000,265);
 insert into menu (menu_id,menu_name,price,categories,calorie) values (2000,'유스베리티',7000,2000,175);
-insert into menu (menu_id,menu_name,price,categories,calorie) values (2001,'유자 민트티',5900,2000,145);
+insert into menu (menu_id,menu_name,price,categories,calorie) values (2001,'유자민트티',5900,2000,145);
 insert into menu (menu_id,menu_name,price,categories,calorie) values (2002,'자몽허니블랙티',5700,2000,125);
-insert into menu (menu_id,menu_name,price,categories,calorie) values (3000,'유자 에이드',5900,3000,65);
-insert into menu (menu_id,menu_name,price,categories,calorie) values (3001,'레몬 에이드',5400,3000,65);
+insert into menu (menu_id,menu_name,price,categories,calorie) values (3000,'유자에이드',5900,3000,65);
+insert into menu (menu_id,menu_name,price,categories,calorie) values (3001,'레몬에이드',5400,3000,65);
 select * from menu;
 
 

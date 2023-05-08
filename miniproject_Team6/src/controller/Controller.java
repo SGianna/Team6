@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import model.CommandController;
 import model.dto.CommandDto;
 import view.InputView;
-import model.SignInDAO;
+import model.CustomerDAO;
 import model.dto.CustomerDTO;
 import view.OutputView;
 import model.MenuDAO;
@@ -31,30 +31,36 @@ public class Controller {
 	public static boolean addCustomer(ArrayList<String> info) {
 		boolean result = false;
 		try {
-			result = SignInDAO.createCustomer(info);
-			OutputView.createUser();
+			result = CustomerDAO.createCustomer(info);
+			OutputView.print("회원가입이 완료되었습니다.");
 		} catch (SQLException s) {
 			s.printStackTrace();
 			OutputView.printException("모든 프로젝트 저장시 에러 발생");
 		}
 		return result;
 	}
+	
+	
+	public static boolean login(String userInfo){
+		boolean result = false;
+		try {
+			
+			ArrayList<String> info = infomSplit(userInfo);
+			result = CustomerDAO.checkCustomer(new CustomerDTO(info.get(0),info.get(1)));
+			
+			if(result) {
+				OutputView.print("확인되었습니다.");
+				return true;
+			}else {
+				OutputView.printException("해당 회원 정보가 존재하지 않습니다.");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
 
-//	public void run() {
-//		CommandController commandController = readCommand();
-//		while (commandController.isNotQuit()) {
-//			do {
-//				try {
-//					service.get(commandController).run();
-//				} catch (IllegalArgumentException e) {
-//					outputView.printException(e.getMessage());
-//				} finally {
-//					commandController = readCommand();
-//				}
-//
-//			}while (!commandController.isNotQuit());
-//		}
-//	}
 	public void run() {
 		CommandController commandController = readCommand();
 		while (commandController.isNotQuit()) {
@@ -75,7 +81,13 @@ public class Controller {
 	}
 
 	public void firstView() {
-		inputView.firstMsg();
+		String userInfo = inputView.firstMsg();
+		Controller.login(userInfo);
+		//메뉴판 불러오기
+		String menuName = inputView.secondMsg();
+		//주문 메뉴의 가격 정보 가져오기
+		Controller.setOrder(menuName);
+		
 	}
 
 	public void secondView() {
@@ -91,11 +103,9 @@ public class Controller {
 		Controller.addCustomer(info);
 	}
 	
-	public ArrayList<String> infomSplit(String msg){
-		String [] information = msg.split(",");
-		ArrayList<String> infomList = new ArrayList<>(Arrays.asList(information));
-		
-		return infomList;
+	public static ArrayList<String> infomSplit(String msg){
+		String [] information = msg.split(",");		
+		return new ArrayList<>(Arrays.asList(information));
 	}
 
 	public static boolean getAllMenu() {
