@@ -1,0 +1,46 @@
+
+### 고객(customer) TABLE
+
+고객번호(PK) : VARCHAR(5) 
+
+이름 : VARCHAR(45) / NOT NULL (무조건 들어와야 하는 데이터)
+
+전화번호 : VARCHAR(15) / NOT NULL  (무조건 들어와야 하는 데이터)
+
+생년월일 : Date / NOT NULL  (무조건 들어와야 하는 데이터)
+
+성별 : VARCHAR(1) / NULL값 허용
+
+누적금액 : INT (Default = 0) / 0 이면 무조건 Family등급
+
+등급(FK) : INT (처음 가입하면 Default값 = Family)
+
+ex) 0001/고재민/010-0000-0000/980731/ 남(male)/10000/Gold
+
+### 등급(grade) TABLE
+
+등급번호(PK) : INT
+
+등급 : VARCHAR(30)
+
+### 메뉴(menu) TABLE
+
+메뉴번호 : INT (카테고리별 번호 부여를 위해 auto increment는 사용하지 않음)
+
+메뉴이름 : VARCHAR(50)
+
+가격 : INT
+
+카테고리 : INT
+
+칼로리 : INT ( 칼로리도 뷰 화면에 표시)
+
+### 주문(order) TABLE
+
+주문번호 :  INT (auto_increment)
+
+주문일시 :  TIMESTEMP / Now() 사용
+
+총금액 : INT
+
+고객번호(FK) : INT (NULL 허용 / 비회원 주문일 경우 NULL) - 누가주문했는지 알기 위해서
