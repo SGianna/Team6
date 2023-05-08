@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.sql.SQLException;
@@ -26,31 +28,44 @@ public class Controller {
 	}
 
 	// 회원가입시 회원 정보 저장하기
-//	public static boolean addCustomer(CustomerDTO signin) {
-//		boolean result = false;
-//		try {
-//			result = SignInDAO.createCustomer(signin);
-//			OutputView.print("회원가입이 완료되었습니다.");
-//		} catch (SQLException s) {
-//			s.printStackTrace();
-//			OutputView.printException("모든 프로젝트 저장시 에러 발생");
-//		}
-//		return result;
-//	}
+	public static boolean addCustomer(ArrayList<String> info) {
+		boolean result = false;
+		try {
+			result = SignInDAO.createCustomer(info);
+			OutputView.createUser();
+		} catch (SQLException s) {
+			s.printStackTrace();
+			OutputView.printException("모든 프로젝트 저장시 에러 발생");
+		}
+		return result;
+	}
 
+//	public void run() {
+//		CommandController commandController = readCommand();
+//		while (commandController.isNotQuit()) {
+//			do {
+//				try {
+//					service.get(commandController).run();
+//				} catch (IllegalArgumentException e) {
+//					outputView.printException(e.getMessage());
+//				} finally {
+//					commandController = readCommand();
+//				}
+//
+//			}while (!commandController.isNotQuit());
+//		}
+//	}
 	public void run() {
 		CommandController commandController = readCommand();
 		while (commandController.isNotQuit()) {
-			do {
-				try {
-					service.get(commandController).run();
-				} catch (IllegalArgumentException e) {
-					outputView.printException(e.getMessage());
-				} finally {
-					commandController = readCommand();
-				}
-
-			}while (!commandController.isNotQuit());
+			try {
+				service.get(commandController).run();
+			} catch (IllegalArgumentException e) {
+				outputView.printException(e.getMessage());
+			} finally {
+				//commandController = readCommand();
+			}
+// 종료메세지는 static 메소드로 출력
 		}
 	}
 
@@ -64,11 +79,23 @@ public class Controller {
 	}
 
 	public void secondView() {
-		inputView.secondMsg();
+		//메뉴판 불러오기
+		String menuName = inputView.secondMsg();
+		//주문 메뉴의 가격 정보 가져오기
+		Controller.setOrder(menuName);
 	}
 
 	public void thridView() {
-		inputView.thirdMsg();
+		CustomerDTO cd = new CustomerDTO();
+		ArrayList<String> info = infomSplit(inputView.thirdMsg());
+		Controller.addCustomer(info);
+	}
+	
+	public ArrayList<String> infomSplit(String msg){
+		String [] information = msg.split(",");
+		ArrayList<String> infomList = new ArrayList<>(Arrays.asList(information));
+		
+		return infomList;
 	}
 
 	public static boolean getAllMenu() {
@@ -84,7 +111,7 @@ public class Controller {
 		return true;
 	}
 
-	public static boolean getPrice(String menuName) {
+	public static boolean setOrder(String menuName) {
 	
 		try {
 			OutputView.OrderView(MenuDAO.getPrice(menuName));

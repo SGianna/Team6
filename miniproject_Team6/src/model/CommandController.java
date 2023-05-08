@@ -14,7 +14,7 @@ public enum CommandController {
     THIRD("3"),
     QUIT("Q");
 
-    private static final String INVALID_COMMAND_MSG = "�바르� �� �력�니";
+    private static final String INVALID_COMMAND_MSG = "올바르지 않은 입력 값입니다.";
     private final String command;
 
     public static CommandController from(String command){

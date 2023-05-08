@@ -38,9 +38,9 @@ public class InputView {
 
 	public String secondMsg() { //비회원주문
 		System.out.println(SECOND_MSG);
+		//메뉴판 불러오기
 		Controller.getAllMenu();
 		String msg = sc.next();
-		Controller.getPrice(msg);
 		return msg;
 	}
 
