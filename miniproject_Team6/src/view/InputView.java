@@ -14,9 +14,6 @@ public class InputView {
 		public static void main(String[] args) {
 			Controller controller = new Controller();
 			controller.run();
-//		    if(sc.equals('Q')) {
-//		    	break;
-//		    }
 		    
 		}
 //		private static final String WELCOME_MSG = "\n 번호를 선택해주세요 \n"

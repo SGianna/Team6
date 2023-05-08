@@ -26,7 +26,6 @@ public class Controller {
 //		service.put(CommandController.FIRST, this::firstView); // 1번 선택
 //		service.put(CommandController.SECOND, this::secondView);// 2번 선택
 //		service.put(CommandController.THIRD, this::thridView);// 3번 선택
-//		service.put(CommandController.QUIT, this::quitView);// 4번 선택
 //	}
 
 	// 회원가입시 회원 정보 저장하기
