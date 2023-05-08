@@ -68,4 +68,28 @@ public class CustomerDAO {
 		return false;
 	}
 
+	public static CustomerDTO getGname(String gname) throws SQLException {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		CustomerDTO cto = null;
+
+		try {
+			con = DBUtil.getConnection();
+			pstmt = con
+					.prepareStatement("select grade_name from grade where grade_id = (select grade_id from customer where cust_name = ?)");
+			pstmt.setString(1, gname);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				String s = rs.getString(1);
+				System.out.println(s);
+			}
+
+		} finally {
+			DBUtil.close(con, pstmt, rs);
+		}
+		return cto;
+
+	}
+
 }

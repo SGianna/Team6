@@ -38,4 +38,10 @@ public class OutputView {
 	public static void createUser() {
 		System.out.println("회원가입이 완료되었습니다.");
 	}
+	public static void allView(Object object) {
+		System.out.println(object);
+	}
+	public static void print(String s) {
+		System.out.println(s);
+	}
 }

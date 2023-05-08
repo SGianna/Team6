@@ -60,7 +60,16 @@ public class Controller {
 		return result;
 	}
 	
-
+	public static void grade(String userInfo) {
+		ArrayList<String> info = infomSplit(userInfo);
+		try {
+			
+			OutputView.allView(CustomerDAO.getGname(info.get(0)));
+		} catch (Exception e) {
+			e.printStackTrace();
+			OutputView.printException(info.get(0));
+		}
+	}
 	public void run() {
 		CommandController commandController = readCommand();
 		while (commandController.isNotQuit()) {
@@ -87,7 +96,8 @@ public class Controller {
 		String menuName = inputView.secondMsg();
 		//주문 메뉴의 가격 정보 가져오기
 		Controller.setOrder(menuName);
-		
+		//등급 정보 가져오기
+		Controller.grade(userInfo);
 	}
 
 	public void secondView() {
