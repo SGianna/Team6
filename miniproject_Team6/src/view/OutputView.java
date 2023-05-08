@@ -34,6 +34,9 @@ public class OutputView {
 	public static void OrderView(int menuPrice) {
 		System.out.println("주문해주셔서 감사합니다. 주문 금액은 "+ menuPrice +"원 입니다.");
 	}
+	public static void allView(Object object) {
+		System.out.println(object);
+	}
 	
 	public static void createUser() {
 		System.out.println("회원가입이 완료되었습니다.");

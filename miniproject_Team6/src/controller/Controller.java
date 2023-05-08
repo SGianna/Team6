@@ -78,7 +78,7 @@ public class Controller {
 			} catch (IllegalArgumentException e) {
 				outputView.printException(e.getMessage());
 			} finally {
-				//commandController = readCommand();
+				commandController = readCommand();
 			}
 // 종료메세지는 static 메소드로 출력
 		}
@@ -88,9 +88,15 @@ public class Controller {
 		CommandDto commandDto = Retry.execute(inputView::readCmd);
 		return CommandController.from(commandDto.getCommand());
 	}
+	
+//	public CommandController nextReadcommand() {
+//		CommandDto commandDto = Retry.execute(inputView::readNextCmd);
+//		return CommandController.from(commandDto.getCommand());
+//	}
 
 	public void firstView() {
 		String userInfo = inputView.firstMsg();
+		//회원 정보 확인
 		Controller.login(userInfo);
 		//메뉴판 불러오기
 		String menuName = inputView.secondMsg();
@@ -100,14 +106,14 @@ public class Controller {
 		Controller.grade(userInfo);
 	}
 
-	public void secondView() {
+	public void secondView() { //비회원 주문
 		//메뉴판 불러오기
 		String menuName = inputView.secondMsg();
 		//주문 메뉴의 가격 정보 가져오기
 		Controller.setOrder(menuName);
 	}
 
-	public void thridView() {
+	public void thridView() { // 회원가입
 		CustomerDTO cd = new CustomerDTO();
 		ArrayList<String> info = infomSplit(inputView.thirdMsg());
 		Controller.addCustomer(info);

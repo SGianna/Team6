@@ -30,6 +30,11 @@ public class InputView {
 		String cmd = sc.next().toUpperCase();
 		return new CommandDto(cmd);
 	}
+//	public CommandDto nextReadCmd() {
+//		System.out.println();
+//		String cmd = sc.next().toUpperCase();
+//		return new CommandDto(cmd);
+//	}
 
 	public String firstMsg() { //회원 주문
 		System.out.println(FIRST_MSG);
