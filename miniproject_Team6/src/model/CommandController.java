@@ -14,7 +14,7 @@ public enum CommandController {
     THIRD("3"),
     QUIT("Q");
 
-    private static final String INVALID_COMMAND_MSG = "올바르지 않은 입력입니다.";
+    private static final String INVALID_COMMAND_MSG = "�바르� �� �력�니";
     private final String command;
 
     public static CommandController from(String command){
@@ -23,7 +23,8 @@ public enum CommandController {
                 .findFirst()
                 .orElseThrow(() -> new IllegalArgumentException(INVALID_COMMAND_MSG));
     }
-    public boolean isNotQuit() { return this != QUIT; }
+    public boolean isNotQuit() { 
+    	return this != QUIT; }
 
 
 }
