@@ -1,23 +1,32 @@
 # ☕ FISA CAFE PROJECT ☕
 
 ## 📋 프로젝트 개요
+- MVC, DAO, DTO 디자인 패턴 이용, 카페 키오스크 구현 (+lombok 라이브러리)
+- 키오스크 화면에서 해당 가게의 메뉴를 출력
+- 회원이 아닐경우, 비회원 주문을 하거나 회원가입을할 수 있다.
+- 회원가입이 완료되어 회원일 경우, 이름과 전화번호로 해당 가게의 회원인지 조회한 후 메뉴를 주문할 수 있다.
+- 메뉴를 주문하면 총 주문 금액과 해당 고객의 등급(Family, Gold, VIP)을 출력하여 보여준다.
 
 
 ## 📅 프로젝트 기간
 - 기획 : 2023.05.07
 - 개발 : 2023.05.08 (9:00 ~ 18:00)
 
-## 진행 인원 및 역할
+
+
+## 😃진행 인원 및 역할
 - 4인
-<재민>
-[InputView - Controller]
+
+
+- 😑<재민>
+- [InputView - Controller]
 - while 문으로 4.종료 전까지 수행
 - Scanner return 처리
 - 사용자 Input 정보받아서 (예외처리: 1~4 외 불가)
 - 1~4 Input에 맞춰 기능 매핑 ( Controller의 각 기능 메소드에 연결)
     
-<예정>
-[InputView - Controller - OutputView]
+- 😄<예정>
+- [InputView - Controller - OutputView]
 - “주문하실 음료를 골라주세요”, 사용자 Input 대기 (Scanner)  + 메뉴판
 - getAllMenu : 메뉴판 출력
 - 사용자 Input 정보받아서 return (예외처리 : 1~N 외 불가, N = count(메뉴))
@@ -31,8 +40,8 @@
 - “{cust_name}고객님의 회원등급은 {grade_name}입니다.”
 
 
-<은영>
-[InputView - Controller - OutputView]
+- 😎<은영>
+- [InputView - Controller - OutputView]
 - “ 회원정보를 입력해주세요”, 사용자 Input 대기 (Scanner)
 - Controller.메소드명(사용자 Input)
 - getCustomer(이름, 전화번호)
@@ -44,7 +53,7 @@
 - insert : db customer table에 고객 정보 추가(생성) (예외처리 : null 허용 불가 등)
 - EndView.print(“가입이 완료되었습니다”) → 초기화면으로 이동
 
-<하늘>
+- 😝 <하늘>
 - table 생성 (customer,grade,menu,sale)
 - default data 생성 (Customer, grade, sale)
 - db table과 연동 가능한 데이터 클래스 생성 (customer,grade,menu,sale)
@@ -163,6 +172,8 @@
 
 ---
 
+
+
 ## 👩‍ TABLE 구성
 
 ### 고객(customer) TABLE
@@ -220,6 +231,8 @@ ex) 0001/고재민/010-0000-0000/980731/ 남(male)/10000/ /Gold
 | 2 | 2023/05/05 | 10500 | CM001 |
 | 3 | 2023/05/06 | 4500 | CM002 |
 
+
+
 ## 👨‍💻 사용언어 & Tool
 ### LANGUAGE
 - JAVA
@@ -230,6 +243,7 @@ ex) 0001/고재민/010-0000-0000/980731/ 남(male)/10000/ /Gold
 - VSC
 - MySQL
 - DBeaver
+
 
 ### 형상관리 TOOL
 - Github
