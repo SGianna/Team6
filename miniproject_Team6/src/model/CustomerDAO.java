@@ -12,7 +12,7 @@ import model.dto.CustomerDTO;
 import model.util.DBUtil;
 
 public class CustomerDAO {
-	private static int cust_id = 1;
+	private static int cust_id = 3;
 	
 	// 회원가입
 	public static boolean createCustomer(ArrayList<String> info) throws SQLException {

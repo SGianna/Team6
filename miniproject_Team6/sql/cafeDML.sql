@@ -9,8 +9,8 @@ insert into grade (grade_id, grade_name ,standard) values (30,'VIP',10000);
 select * from grade;
 
 -- 고객 테이블
-insert into customer (cust_id,cust_name,cust_phone,cust_birth,gender,amount,grade_id) values ('CM001','고재민','010-4512-6065','1998-07-31','M',0,10);
-insert into customer (cust_id,cust_name,cust_phone,cust_birth,gender,amount,grade_id) values ('CM002','김하늘','010-4100-5335','1999-05-06','F',0,20);
+insert into customer (cust_id,cust_name,cust_phone,cust_birth,gender,amount,grade_id) values ('00001','고재민','010-4512-6065','1998-07-31','M',0,10);
+insert into customer (cust_id,cust_name,cust_phone,cust_birth,gender,amount,grade_id) values ('00002','김하늘','010-4100-5335','1999-05-06','F',0,20);
 select * from customer;
 
 -- 메뉴 테이블
