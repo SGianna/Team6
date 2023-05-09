@@ -119,21 +119,20 @@
 
 0001/고재민/010-0000-0000/980731/ 남(male)/10000/ /Gold
 
-| customer_id | name | phone | birthday | gender | 누적금액 (INT) | grade_id |
+| customer_id | name | phone | birthday | gender | amount | grade_id |
 | --- | --- | --- | --- | --- | --- | --- |
 | pk |  |  |  |  |  | fk |
-| 0001 | 고재민 | 010-0000-0000 | 1998-07-31 | male | 1000 | 0001 |
-| 0002 | 김하늘 | 010-1111-1111 |  |  |  | 0002 |
-| 0003 | 이예정 |  |  |  |  | 0002 |
+| 0001 | 고재민 | 010-1111-1111 | 1998-07-31 | M | 0 | 10 |
+| 0002 | 김하늘 | 010-2222-2222 | 1999-05-06 | F | 0 | 20 |
 
 ### 등급(grade) DB
 
-| grade_id | rank |
-| --- | --- |
-| pk |  |
-| 0001 | Gold |
-| 0002 | Silver |
-| 0003 | Bronze |
+| grade_id | grade_name | standard |
+| --- | --- | --- |
+| pk |  |  |
+| 10 | Family | 0 |
+| 20 | Gold | 5000 |
+| 30 | VIP | 10000 |
 
 ### 메뉴(menu) DB
 
