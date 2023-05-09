@@ -5,6 +5,6 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public class CommandDto {
+public class CommandDTO {
 	private final String command;
 }

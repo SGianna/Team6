@@ -1,5 +1,5 @@
 
-### 고객(customer) TABLE
+### 1. 고객(customer) TABLE
 
 고객번호(PK) : VARCHAR(5) 
 
@@ -17,13 +17,16 @@
 
 ex) 0001/고재민/010-0000-0000/980731/ 남(male)/10000/Gold
 
-### 등급(grade) TABLE
+
+### 2. 등급(grade) TABLE
 
 등급번호(PK) : INT
 
 등급 : VARCHAR(30)
 
-### 메뉴(menu) TABLE
+
+
+### 3. 메뉴(menu) TABLE
 
 메뉴번호 : INT (카테고리별 번호 부여를 위해 auto increment는 사용하지 않음)
 
@@ -35,7 +38,9 @@ ex) 0001/고재민/010-0000-0000/980731/ 남(male)/10000/Gold
 
 칼로리 : INT ( 칼로리도 뷰 화면에 표시)
 
-### 주문(order) TABLE
+
+
+### 4. 주문(order) TABLE
 
 주문번호 :  INT (auto_increment)
 

@@ -1,3 +1,5 @@
+
+
 package model;
 
 import java.sql.Connection;
@@ -10,14 +12,14 @@ import model.dto.CustomerDTO;
 import model.util.DBUtil;
 
 public class CustomerDAO {
-	private static int cust_id = 10;
+	private static int cust_id = 1;
+	
 	// 회원가입
 	public static boolean createCustomer(ArrayList<String> info) throws SQLException {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 
 		try {
-
 			con = DBUtil.getConnection();
 			pstmt = con.prepareStatement("insert into Customer values(?, ?, ?, ?, ?, ?, ?)");
 			pstmt.setString(1, String.format("%05d", cust_id++));
@@ -68,27 +70,26 @@ public class CustomerDAO {
 		return false;
 	}
 
-	public static CustomerDTO getGname(String gname) throws SQLException {
+	//등급 가져오기
+	public static String getGname(String gname) throws SQLException {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		CustomerDTO cto = null;
+		String result = null;
 
 		try {
 			con = DBUtil.getConnection();
-			pstmt = con
-					.prepareStatement("select grade_name from grade where grade_id = (select grade_id from customer where cust_name = ?)");
+			pstmt = con.prepareStatement("select grade_name from grade where grade_id = (select grade_id from customer where cust_name = ?)");
 			pstmt.setString(1, gname);
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
-				String s = rs.getString(1);
-				System.out.println(s);
+				result = rs.getString(1);
 			}
 
 		} finally {
 			DBUtil.close(con, pstmt, rs);
 		}
-		return cto;
+		return result;
 
 	}
 
