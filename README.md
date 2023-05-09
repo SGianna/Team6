@@ -18,14 +18,14 @@
 - 4인
 
 
-- 😑<재민>
+### 😐 @Jaemin-kr
 - [InputView - Controller]
 - while 문으로 4.종료 전까지 수행
 - Scanner return 처리
 - 사용자 Input 정보받아서 (예외처리: 1~4 외 불가)
 - 1~4 Input에 맞춰 기능 매핑 ( Controller의 각 기능 메소드에 연결)
     
-- 😄<예정>
+### 😄 @SGianna
 - [InputView - Controller - OutputView]
 - “주문하실 음료를 골라주세요”, 사용자 Input 대기 (Scanner)  + 메뉴판
 - getAllMenu : 메뉴판 출력
@@ -40,7 +40,7 @@
 - “{cust_name}고객님의 회원등급은 {grade_name}입니다.”
 
 
-- 😎<은영>
+### 😎 @2un-light
 - [InputView - Controller - OutputView]
 - “ 회원정보를 입력해주세요”, 사용자 Input 대기 (Scanner)
 - Controller.메소드명(사용자 Input)
@@ -53,7 +53,7 @@
 - insert : db customer table에 고객 정보 추가(생성) (예외처리 : null 허용 불가 등)
 - EndView.print(“가입이 완료되었습니다”) → 초기화면으로 이동
 
-- 😝 <하늘>
+### 😆 @dodhddl
 - table 생성 (customer,grade,menu,sale)
 - default data 생성 (Customer, grade, sale)
 - db table과 연동 가능한 데이터 클래스 생성 (customer,grade,menu,sale)
